@@ -15,3 +15,20 @@ var reverse = function (x) {
 		return reversedInt.join("");
 	}
 };
+
+// faster solution:
+let stringNum = x.toString().split("").reverse();
+if (stringNum[stringNum.length - 1] === "-") {
+	stringNum.pop();
+	stringNum = -stringNum.join("");
+} else {
+	stringNum = stringNum.join("");
+}
+let numAnswer = Number(stringNum);
+if (numAnswer < Math.pow(-2, 31)) {
+	return 0;
+}
+if (numAnswer > Math.pow(2, 31)) {
+	return 0;
+}
+return numAnswer;
