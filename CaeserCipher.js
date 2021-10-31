@@ -44,3 +44,18 @@ function caesarCipherEncryptor(string, key) {
 	}
 	return answer;
 }
+
+//solution without dictionary
+
+function caesarCipherEncryptor(string, key) {
+	let alphabet = "abcdefghijklmnopqrstuvwxyz";
+	string = string.toLowerCase();
+	let answer = "";
+	for (let i = 0; i < string.length; i++) {
+		let currChar = string[i];
+		let currIndex = alphabet.indexOf(currChar);
+		let newIndex = (currIndex + key) % 26;
+		answer += alphabet[newIndex];
+	}
+	return answer;
+}
