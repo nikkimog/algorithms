@@ -1,0 +1,17 @@
+URL https://leetcode.com/problems/remove-element/submissions/
+
+var removeElement = function(nums, val) {
+    let originalLength = nums.length
+    
+    for (let i=0; i<nums.length ;i++){
+        if (nums[i]===val){
+            nums.splice(i,1)
+            console.log("nums", nums)
+            i--
+            if (nums.length ===i){
+                break
+            }
+        }
+    }
+    
+};
