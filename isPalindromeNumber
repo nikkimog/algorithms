@@ -1,0 +1,17 @@
+// https://leetcode.com/problems/palindrome-number/
+
+function isPalindrome(x: number): boolean {
+        if (x<0){
+            return false
+        }
+        let numberString = x.toString()
+        let length = numberString.length
+        for (let i=0; i<length/2; i++){
+            let currentChar = numberString[i]
+            if (currentChar!== numberString[length-i-1] ){
+                return false
+            }
+            }
+        
+    return true
+};
